@@ -18,7 +18,7 @@ public class GenericsThree {
         checkOutAllItems(items);
     }
 
-    private static void checkOutAllItems(List<Item> items) {
+    private static void checkOutAllItems(List<? extends Item> items) {
         items.forEach(GenericsThree::checkOutItem);
     }
 
