@@ -1,4 +1,4 @@
-package generics;
+package Generics;
 
 public class GenericsTwo {
     public static void main(String[] args) {
