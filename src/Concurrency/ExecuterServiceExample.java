@@ -1,8 +1,5 @@
 package Concurrency;
 
-import FunctionalProgramming.FunctionalInterfacesExtras.Greeting;
-
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -27,5 +24,16 @@ public class ExecuterServiceExample {
         executorService.execute(fourth);
 
         executorService.shutdown();
+
+        ATM atm = new ATM(200);
+
+        ExecutorService secondExecutorService = Executors.newFixedThreadPool(5);
+        secondExecutorService.submit(() -> atm.withdraw(100));
+        secondExecutorService.submit(() -> atm.withdraw(20));
+        secondExecutorService.submit(() -> atm.withdraw(100));
+        secondExecutorService.submit(() -> atm.withdraw(80));
+        secondExecutorService.submit(() -> atm.withdraw(10));
+
+        secondExecutorService.shutdown();
     }
 }
