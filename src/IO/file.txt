@@ -1,0 +1,4 @@
+This is a random file.
+This is the second line of it.
+This is the third one.
+You won't believe it, but actually this is the last line.
